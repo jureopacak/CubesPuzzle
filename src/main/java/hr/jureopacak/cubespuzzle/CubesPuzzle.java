@@ -24,7 +24,7 @@ public class CubesPuzzle {
 	 * ways.
 	 * <p>
 	 * 1. With one argument. Where argument is piece set. Piece set is one of
-	 * (blue|red|purple|yellow). In this way solution wil be printed to standard
+	 * (blue|red|purple|yellow). In this way solution will be printed to standard
 	 * out.
 	 * <p>
 	 * 2. With two arguments. Where first argument is piece set. Piece set is

@@ -290,13 +290,13 @@ public class Piece implements Cloneable {
 	}
 
 	/**
-	 * Compares edges.
+	 * Compare edges.
 	 * 
 	 * @param toCheck
 	 *            edge
 	 * @param checkWith
 	 *            edge
-	 * @return <code>true</code> if pins of edge are same , othervise returns
+	 * @return <code>true</code> if pins of edge are same, otherwise returns
 	 *         <code>false</code>
 	 */
 	private boolean compareEdges(Edge toCheck, Edge checkWith) {

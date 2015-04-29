@@ -200,8 +200,8 @@ public class Cube {
 	}
 
 	/**
-	 * Checking if to edges of different piece is matching each other. Piece is
-	 * maching another piece if and only if pices haves 1s (pins) on different
+	 * Checking if two edges of different piece is matching each other. Piece is
+	 * matching another piece if and only if pices have 1s (pins) on different
 	 * places, and there are no gaps beetween non cornerd pins.
 	 * 
 	 * @param rootPins

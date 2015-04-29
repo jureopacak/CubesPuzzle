@@ -161,7 +161,7 @@ public class Piece implements Cloneable {
 			} else {
 				sb.append("0");
 			}
-		} else if (i > 1 || i < 5) {
+		} else if (i > 1 && i < 5) {
 			sb.append(leftEdge.getPins().get(i - 1) + "111"
 					+ rightEdge.getPins().get(i - 1));
 		} else if (i == 5) {

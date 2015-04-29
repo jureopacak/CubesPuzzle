@@ -91,7 +91,7 @@ public class CubeTest {
 				new Edge(Arrays.asList(0, 0, 1, 0, 0)));
 		
 		toCheck.add(p1);
-		
+
 		assertEquals(true, cube.checkIfFits(p2, toCheck));
 		assertEquals(true, cube.checkIfFits(p3, toCheck));
 		assertEquals(false, cube.checkIfFits(p4, toCheck));

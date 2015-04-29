@@ -19,10 +19,10 @@ public class Cube {
 	 * 4th element in List<Piece> is representing LEFT   side
 	 * 5th element in List<Piece> is representing TOP    side
 	 * 6th element in List<Piece> is representing BOTTOM side
-	 *     +--------+
+	 *         +--------+
 	 *	  /|       /|
 	 *	 / |  T   / |
-	 *  +--|---B-+  |
+	 *      +--|---B-+  |
 	 *	|L |     |R |
 	 *	|  +-F---|--+
 	 *	| /      | /

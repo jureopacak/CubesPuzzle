@@ -161,7 +161,7 @@ public class Piece implements Cloneable {
 			} else {
 				sb.append("0");
 			}
-		} else if (i == 2 || i == 4 || i == 3) {
+		} else if (i > 1 || i < 5) {
 			sb.append(leftEdge.getPins().get(i - 1) + "111"
 					+ rightEdge.getPins().get(i - 1));
 		} else if (i == 5) {
@@ -186,7 +186,43 @@ public class Piece implements Cloneable {
 
 		return sb.toString().replace("0", " ").replace("1", "o");
 	}
+	
+	public void printSideAndOrientation() {
+		System.out.println("Orientation: " + orientation + ", side: " + side);
+	}
+	
+	public Orientation getOrientation() {
+		return orientation;
+	}
+	
+	public Side getSide() {
+		return side;
+	}
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public Edge getTopEdge() {
+		return topEdge;
+	}
+
+	public Edge getLeftEdge() {
+		return leftEdge;
+	}
+
+	public Edge getBottomEdge() {
+		return bottomEdge;
+	}
+
+	public Edge getRightEdge() {
+		return rightEdge;
+	}
+	
 	public List<Integer> getTopPins() {
 		return topEdge.getPins();
 	}
@@ -201,22 +237,6 @@ public class Piece implements Cloneable {
 
 	public List<Integer> getRightPins() {
 		return rightEdge.getPins();
-	}
-
-	public Orientation getOrientation() {
-		return orientation;
-	}
-
-	public Side getSide() {
-		return side;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public boolean haveTopRightCorner() {
@@ -257,36 +277,34 @@ public class Piece implements Cloneable {
 	 *         <code>false</code>
 	 */
 	public boolean isSameAs(Piece piece) {
-		if (!comparePins(getTopPins(), piece.getTopPins())) {
+		if (!compareEdges(topEdge, piece.getTopEdge())) {
 			return false;
-		} else if (!comparePins(getLeftPins(), piece.getLeftPins())) {
+		} else if (!compareEdges(leftEdge, piece.getLeftEdge())) {
 			return false;
-		} else if (!comparePins(getRightPins(), piece.getRightPins())) {
+		} else if (!compareEdges(rightEdge, piece.getRightEdge())) {
 			return false;
-		} else if (!comparePins(getBottomPins(), piece.getBottomPins())) {
+		} else if (!compareEdges(bottomEdge, piece.getBottomEdge())) {
 			return false;
 		}
 		return true;
 	}
 
 	/**
-	 * Compares pins
+	 * Compares edges.
 	 * 
 	 * @param toCheck
-	 *            pins of edge to check
+	 *            edge
 	 * @param checkWith
-	 *            pins of edge to check with
+	 *            edge
 	 * @return <code>true</code> if pins of edge are same , othervise returns
 	 *         <code>false</code>
 	 */
-	private boolean comparePins(List<Integer> toCheck, List<Integer> checkWith) {
+	private boolean compareEdges(Edge toCheck, Edge checkWith) {
 		for (int i = 0; i < 5; i++) {
-			if (toCheck.get(i) != checkWith.get(i)) {
+			if (toCheck.getPins().get(i) != checkWith.getPins().get(i)) {
 				return false;
 			}
-
 		}
-
 		return true;
 	}
 }
